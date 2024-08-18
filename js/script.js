@@ -22,8 +22,12 @@ function showData(dataArray) {
 
 fetch (DATA_URL)
 
-.then(respuesta => respuesta.json());
+.then(response => response.json());
 
 .then(data => {
   showData(data.students);
 })
+
+.catch(error => {
+  console.error('Error al cargar los datos:', error);
+});
